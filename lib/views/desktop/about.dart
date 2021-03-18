@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:megaline_app/widgets/widgets.dart';
 
 class DesktopAbout extends StatelessWidget {
   @override
@@ -14,65 +15,7 @@ class DesktopAbout extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 250, vertical: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      child: Image.asset("logo.webp"),
-                    ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/desktopHome");
-                          },
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text(
-                              "Megaline",
-                              style: TextStyle(
-                                color: Color(0xFF68B04D),
-                              ),
-                            ),
-                          ),
-                        ),
-                        GestureDetector(
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text(
-                              "Services",
-                              style: TextStyle(
-                                color: Color(0xFF68B04D),
-                              ),
-                            ),
-                          ),
-                        ),
-                        GestureDetector(
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text(
-                              "About",
-                            ),
-                          ),
-                        ),
-                        GestureDetector(
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text(
-                              "Contact",
-                              style: TextStyle(
-                                color: Color(0xFF68B04D),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              MainHeader(),
               Column(
                 children: [
                   //hero
@@ -91,35 +34,32 @@ class DesktopAbout extends StatelessWidget {
                           child: Text(
                             "It'\s About You Too",
                             style: TextStyle(
-                                fontSize: 35,
-                                fontFamily: 'Futura',
-                                color: Colors.green,
-                                fontWeight: FontWeight.bold),
+                              fontSize: 35,
+                              fontFamily: 'Futura',
+                              color: Colors.green,
+                            ),
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.fromLTRB(400, 0, 400, 80),
+                          padding: EdgeInsets.fromLTRB(400, 0, 400, 60),
                           child: Text(
-                            "Consult with us on your Projects, Supplies needs or anything else ----- We’d love to meet your needs",
+                            "Consult with us on your Projects, Supplies needs \n or anything else ----- We’d love to meet your needs",
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                backgroundColor: Colors.green,
-                                color: Colors.white,
-                                // fontSize: 19,
-                                letterSpacing: 6,
-                                fontWeight: FontWeight.w500),
+                              backgroundColor: Colors.green,
+                              color: Colors.white,
+                              fontSize: 17,
+                            ),
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.fromLTRB(300, 20, 300, 80),
+                          padding: EdgeInsets.fromLTRB(360, 20, 360, 80),
                           child: Text(
                             "Mega Line Company Ltd, a leading provider of consulting services and a major supplier of solutions to clients in various industries across nations serving Individuals, Businesses and Governments with services relating to Supply Chain, Logistics, Road & Construction and Computer Technologies.",
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                color: Colors.grey[700],
-                                // fontSize: 17,
-                                letterSpacing: 6,
-                                fontWeight: FontWeight.w500),
+                              fontSize: 17,
+                            ),
                           ),
                         ),
                       ],
@@ -128,7 +68,7 @@ class DesktopAbout extends StatelessWidget {
 
                   Container(
                     padding:
-                        EdgeInsets.symmetric(vertical: 70, horizontal: 170),
+                        EdgeInsets.symmetric(vertical: 70, horizontal: 150),
                     child: Column(
                       children: [
                         Row(
@@ -201,14 +141,14 @@ class DesktopAbout extends StatelessWidget {
                                   ),
                                   SizedBox(height: 20),
                                   Text(
-                                    ". Executive Directors",
+                                    "Executive Directors",
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: Colors.grey[700],
                                     ),
                                   ),
                                   Text(
-                                    ". Managing Director",
+                                    "Managing Director",
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: Colors.grey[700],
@@ -233,7 +173,10 @@ class DesktopAbout extends StatelessWidget {
                               child: Text(
                                 "Our Mission",
                                 style: TextStyle(
-                                    fontSize: 25, color: Colors.white),
+                                  fontSize: 25,
+                                  color: Colors.white,
+                                  fontFamily: 'Futura',
+                                ),
                                 textAlign: TextAlign.right,
                               ),
                             ),
@@ -251,7 +194,22 @@ class DesktopAbout extends StatelessWidget {
                                   ),
                                   SizedBox(height: 20),
                                   Text(
-                                    "Megaline Company Ltd. was incorporated in Ghana as a \n Limited Liability Company 1992 operating as a Leading \n consultant in General Supplies, IT Solutions , road \n and construction.",
+                                    "1. Consulting, Procurement of Supplies, and Leading Projects",
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                  SizedBox(height: 15),
+                                  Text(
+                                    "2. Professional service offering to our clients",
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                  SizedBox(height: 15),
+                                  Text(
+                                    "3. Adapting modern technologies in service provisions",
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                  SizedBox(height: 15),
+                                  Text(
+                                    "4. Efficient quality control & cost saving strategies to meet client requirements",
                                     style: TextStyle(fontSize: 16),
                                   ),
                                 ],
@@ -261,9 +219,10 @@ class DesktopAbout extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
+              Footer(),
             ],
           ),
         ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ServicesGridItems extends StatelessWidget {
-  String _title = '';
-  String _content = '';
-  Color _bgColor;
+  final String _title;
+  final String _content;
+  final Color _bgColor;
   ServicesGridItems(this._title, this._content, this._bgColor);
 
   @override
@@ -50,8 +50,8 @@ class ServicesGridItems extends StatelessWidget {
 
 class ProjectsGridItems extends StatelessWidget {
   final _icon;
-  String _number = "";
-  String _title = "";
+  final String _number;
+  final String _title;
   ProjectsGridItems(this._icon, this._number, this._title);
 
   @override
@@ -59,7 +59,6 @@ class ProjectsGridItems extends StatelessWidget {
     return Container(
       width: 241,
       color: Color(0xff84B647),
-      height: 250,
       margin: EdgeInsets.all(3),
       padding: EdgeInsets.all(20),
       child: Column(
@@ -76,16 +75,6 @@ class ProjectsGridItems extends StatelessWidget {
             style: TextStyle(color: Colors.white, fontSize: 19),
             textAlign: TextAlign.center,
           ),
-          SizedBox(
-            height: 60,
-          ),
-          Container(
-            height: 10,
-            child: LinearProgressIndicator(
-              backgroundColor: Color(0xff0DC63F),
-              valueColor: new AlwaysStoppedAnimation<Color>(Color(0xff8DC63F)),
-            ),
-          ),
         ],
       ),
     );
@@ -93,8 +82,8 @@ class ProjectsGridItems extends StatelessWidget {
 }
 
 class ServicesScreenGrid extends StatelessWidget {
-  String _imgSrc = "";
-  String _title = "";
+  final String _imgSrc;
+  final String _title;
   ServicesScreenGrid(this._imgSrc, this._title);
 
   @override
@@ -153,6 +142,79 @@ class ServicesScreenGrid extends StatelessWidget {
               ],
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class MainHeader extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 250, vertical: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            child: Image.asset("logo.webp"),
+          ),
+          Row(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, "/home");
+                },
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Text("Megaline"),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, "/services");
+                },
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Text("Services"),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, "/about");
+                },
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Text("About"),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, "/home");
+                },
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Text("Contact"),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Footer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Color(0xffDEDEDE),
+      padding: EdgeInsets.all(50),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("© 2019 | Megaline Company Limited"),
         ],
       ),
     );
